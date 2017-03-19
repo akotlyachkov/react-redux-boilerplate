@@ -1,23 +1,16 @@
+import React, {Component} from "react";
 
-import * as React from 'react';
-import { Link } from 'react-router';
+export default class HomePage extends Component<any, any> {
 
-var HomePage = React.createClass({
-    getInitialState: function() {
-        return { loaded: false };
-    },
+    render() {
 
-    componentDidMount: function() {
-        this.setState({ loaded: true });
-    },
+        return (
+            <div>
+                <h2>HomeView</h2>
 
-    render: function() {
-        var loading = this.state.loaded ? "" : " (loading...)";
-        return <div>
-            <h2>HomeView {loading}</h2>
-            <div><Link to="/about">About</Link></div>
-        </div>;
+            </div>
+        );
     }
-});
+};
 
-export default HomePage;
+

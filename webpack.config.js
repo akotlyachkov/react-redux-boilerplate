@@ -3,10 +3,10 @@ const webpack = require('webpack'),
 
 module.exports = {
     entry: {
-        app: './client/app/index.ts',
-        libs: './client/app/libs.ts',
-        angular: './client/app/angular.ts',
-        styles: './client/app/styles.ts'
+        app: './client/app/index.tsx',
+        //libs: './client/app/libs.tsx',
+        //angular: './client/app/angular.ts',
+        //styles: './client/app/styles.tsx'
     },
 
     output: {
@@ -16,24 +16,30 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx$/,
                 loaders: [{
                     loader: 'awesome-typescript-loader',
                     options: {
                         transpileOnly: true
                     }
-                }, 'angular2-template-loader'],
-                exclude: /node_modules/,
+                }],
+                exclude: /node_modules/
             },
             {
+                test: /\.js$/,
+                use: ["source-map-loader"],
+                enforce: "pre"
+            },
+
+            {
                 test: /\.scss$/,
-                include: path.join(__dirname,'client/app'),
+                include: path.join(__dirname, 'client/app'),
                 loaders: ['raw-loader', 'sass-loader'],
             },
             {
                 test: /\.scss$/,
-                include: path.join(__dirname,'client/styles'),
-                loaders: ['style-loader', 'css-loader','sass-loader'],
+                include: path.join(__dirname, 'client/styles'),
+                loaders: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.woff$/,
@@ -52,20 +58,24 @@ module.exports = {
     plugins: [
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-           path.join(__dirname,'client/app')
+            path.join(__dirname, 'client/app')
         ),
         new webpack.optimize.CommonsChunkPlugin({
-            name:'common',
-            minChunks: 2,
-            chunks: [
+            name: 'common',
+            /*minChunks: 2,*/
+            /*chunks: [
                 'app',
-                'libs',
-                'angular'
-            ]
+                //'libs',
+                //'angular'
+            ]*/
         })
     ],
     resolve: {
-        extensions: ['.ts', '.scss', '.html', '.js', '.css', '.woff']
+        extensions: ['.tsx','.ts', '.scss', '.html', '.js', '.css', '.woff' ]
     },
+     /*externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
+    },*/
     devtool: 'source-map',
 };
