@@ -1,15 +1,15 @@
 import React, {Component} from "react";
-
-import Navbar from "../controls/navbar";
+import MasterLayout from "../layouts/master";
 
 export default class IndexPage extends Component<any, any> {
     render() {
         return (
-
-            <div className="container">
-                <Navbar/>
-                <h2>Idex</h2>
-                <h3>Page not found</h3>
-            </div>);
+                <MasterLayout>
+                    <div className="row">
+                        <h2>Index</h2>
+                        <p>Page not found</p>
+                    </div>
+            </MasterLayout>
+        );
     }
 }

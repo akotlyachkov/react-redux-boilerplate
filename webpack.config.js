@@ -25,11 +25,11 @@ module.exports = {
                 }],
                 exclude: /node_modules/
             },
-            {
+            /*{
                 test: /\.js$/,
                 use: ["source-map-loader"],
                 enforce: "pre"
-            },
+            },*/
 
             {
                 test: /\.scss$/,
@@ -39,7 +39,17 @@ module.exports = {
             {
                 test: /\.scss$/,
                 include: path.join(__dirname, 'client/styles'),
-                loaders: ['style-loader', 'css-loader', 'sass-loader'],
+                use: [{
+                    loader: "style-loader"
+                }, {
+                    loader: "css-loader", options: {
+                        sourceMap: true
+                    }
+                }, {
+                    loader: "sass-loader", options: {
+                        sourceMap: true
+                    }
+                }],
             },
             {
                 test: /\.woff$/,
@@ -56,26 +66,14 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.ContextReplacementPlugin(
-            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-            path.join(__dirname, 'client/app')
-        ),
+
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'common',
-            /*minChunks: 2,*/
-            /*chunks: [
-                'app',
-                //'libs',
-                //'angular'
-            ]*/
+            name: 'common'
         })
     ],
     resolve: {
         extensions: ['.tsx','.ts', '.scss', '.html', '.js', '.css', '.woff' ]
     },
-     /*externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },*/
-    devtool: 'source-map',
+
+    devtool: 'source-map'
 };
