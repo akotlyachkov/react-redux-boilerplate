@@ -1,10 +1,13 @@
 import React, {Component} from "react";
 import MasterLayout from "../layouts/master";
+import {connect} from "react-redux";
+import {bindActionCreators } from "redux";
 
 
-export default class AboutPage extends Component<any, any> {
+class AboutPage extends Component<any, any> {
     saveLogin(e) {
         e.preventDefault();
+
         window.localStorage.setItem('user', this.refs.login.value);
     }
 
@@ -27,3 +30,14 @@ export default class AboutPage extends Component<any, any> {
         );
     }
 }
+function mapStateToProps(state) {
+    return {state}
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        pageActions: bindActionCreators(pageActions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AboutPage)

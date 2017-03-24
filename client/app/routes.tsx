@@ -1,16 +1,12 @@
 import React from "react";
-import HomePage from "./pages/home";
-import AboutPage from "./pages/About";
-import {BrowserRouter,Switch, Routes, Route, Link} from "react-router-dom";
-import IndexPage from "./pages/index";
-import NotFoundPage from "./pages/not-found";
-import AdminPage from "./pages/Admin";
-import RestrictRoute from "./controls/RestrictRoute";
+import {BrowserRouter, Link, Route, Routes, Switch} from "react-router-dom";
+import {AboutPage, AdminPage, DefaultPage, HomePage, NotFoundPage} from "./pages";
+import {RestrictRoute} from "./controls";
 
-let routeMap = (
-    <BrowserRouter>
+let routes = (
+    <BrowserRouter >
         <Switch>
-            <Route exact path="/" component={IndexPage}/>
+            <Route exact path="/" component={DefaultPage}/>
             <Route path="/home" component={HomePage}/>
             <Route path="/about" component={AboutPage}/>
             <RestrictRoute path="/admin" failPath={'/hz'} component={AdminPage}/>
@@ -19,4 +15,4 @@ let routeMap = (
     </BrowserRouter>
 );
 
-export default routeMap;
+export default routes;

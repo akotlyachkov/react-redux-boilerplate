@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import Photos from "../controls/photos";
-import User from "../controls/user";
+import Photos from "../controls/Photos";
+import User from "../controls/User";
 import * as pageActions from "../actions/page";
 import * as userActions from "../actions/user";
 

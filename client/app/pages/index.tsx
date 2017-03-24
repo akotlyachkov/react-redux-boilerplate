@@ -1,15 +1,14 @@
-import React, {Component} from "react";
-import MasterLayout from "../layouts/master";
+import AboutPage from './About'
+import DefaultPage from './Default'
+import AdminPage from './Admin'
+import HomePage from './Home'
+import NotFoundPage from './NotFound'
 
-export default class IndexPage extends Component<any, any> {
-    render() {
-        return (
-                <MasterLayout>
-                    <div className="row">
-                        <h2>Index</h2>
-                        <p>Page not found</p>
-                    </div>
-            </MasterLayout>
-        );
-    }
+export {
+    AboutPage,
+    DefaultPage,
+    AdminPage,
+    HomePage,
+    NotFoundPage
+
 }

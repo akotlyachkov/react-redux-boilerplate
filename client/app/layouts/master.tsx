@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import Navbar from "../controls/navbar";
-import Jumbotron from "../controls/jumbotron";
+import Navbar from "../controls/Navbar";
+import Jumbotron from "../controls/Jumbotron";
 
 
 export default class MasterLayout extends Component<any, any> {

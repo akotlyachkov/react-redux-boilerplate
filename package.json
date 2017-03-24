@@ -4,6 +4,7 @@
   "description": "react redux webpack typescript",
   "main": "start.js",
   "dependencies": {
+    "axios": "^0.15.3",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "core-js": "^2.4.1",

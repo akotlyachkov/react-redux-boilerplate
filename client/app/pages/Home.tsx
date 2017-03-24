@@ -1,13 +1,16 @@
 import React, {Component} from "react";
 import MasterLayout from "../layouts/master";
-
+const getConfirmation = (message, callback) => {
+    const allowTransition = window.confirm(message)
+    callback(allowTransition)
+}
 export default class HomePage extends Component<any, any> {
-    componentDidMount(props) {
-
-        //this.props.history.push('/about');
+    componentDidMount() {
+        this.props.router.setRouteLeaveHook(this.props.route, getConfirmation)
+        console.log(1)
     }
     componentWillMount(){
-        this.props.history.push('/about');
+        //this.props.history.push('/about');
     }
     render() {
 
