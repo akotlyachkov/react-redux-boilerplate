@@ -1,15 +1,14 @@
-import React, {Component} from "react";
+import AboutPage from './About'
+import DefaultPage from './Default'
+import AdminPage from './Admin'
+import HomePage from './Home'
+import NotFoundPage from './NotFound'
 
-import Navbar from "../controls/navbar";
+export {
+    AboutPage,
+    DefaultPage,
+    AdminPage,
+    HomePage,
+    NotFoundPage
 
-export default class IndexPage extends Component<any, any> {
-    render() {
-        return (
-
-            <div className="container">
-                <Navbar/>
-                <h2>Idex</h2>
-                <h3>Page not found</h3>
-            </div>);
-    }
 }

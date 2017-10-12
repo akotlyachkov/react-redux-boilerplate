@@ -1,18 +1,18 @@
 import React from "react";
-import DefaultLayout from "./layouts/default";
-import IndexPage from "./pages/index";
-import HomePage from "./pages/home";
-import AboutPage from "./pages/about";
-import {Router, Route, IndexRoute, browserHistory} from "react-router";
+import {BrowserRouter, Link, Route, Routes, Switch} from "react-router-dom";
+import {AboutPage, AdminPage, DefaultPage, HomePage, NotFoundPage} from "./pages";
+import {RestrictRoute} from "./controls";
 
-let routeMap = (
-    <Router history={browserHistory}>
-        <Route path="/" exact component={DefaultLayout}>
-            <IndexRoute component={IndexPage}/>
+let routes = (
+    <BrowserRouter >
+        <Switch>
+            <Route exact path="/" component={DefaultPage}/>
             <Route path="/home" component={HomePage}/>
             <Route path="/about" component={AboutPage}/>
-        </Route>
-    </Router>
+            <RestrictRoute path="/admin" failPath={'/hz'} component={AdminPage}/>
+            <Route component={NotFoundPage}/>
+        </Switch>
+    </BrowserRouter>
 );
 
-export default routeMap;
+export default routes;

@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Provider} from "react-redux";
-import configureStore from "./store";
-import IndexPage from "./pages/index";
 import './styles'
 import routes from './routes';
+import {Provider} from "react-redux";
+import configureStore from "./store";
 
-//const store = configureStore();
+
+const store = configureStore();
 
 ReactDOM.render(
-    routes,
+    <Provider store={store}>
+        {routes}
+    </Provider>,
     document.getElementById('root')
 );
-/*<Provider  compiler="TypeScript" framework="React" store={store}>
-
-    <IndexPage />
-</Provider>*/
