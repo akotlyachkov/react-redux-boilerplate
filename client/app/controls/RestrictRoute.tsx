@@ -20,8 +20,5 @@ class RestrictRoute extends Route {
     }
 }
 
- RestrictRoute.propTypes = {
- failPath: React.PropTypes.string.isRequired
 
- };
 export default RestrictRoute;

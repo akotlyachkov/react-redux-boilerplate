@@ -31,9 +31,3 @@ export default class Photos extends Component {
     }
 }
 
-Photos.propTypes = {
-    year: PropTypes.number.isRequired,
-    photos: PropTypes.array.isRequired,
-    getPhotos: PropTypes.func.isRequired,
-    error: PropTypes.string.isRequired
-};
