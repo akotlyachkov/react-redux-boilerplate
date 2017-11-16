@@ -1,16 +1,21 @@
-import React, {Component} from "react";
+import * as React from "react";
 
-export default class User extends Component {
+export interface IUser{
+    name;
+    error;
+    handleLogin;
+}
 
-    render() {
-        const {name, error} = this.props;
+const User = (props:IUser) => {
+
+        const {name, error} = props;
         let template;
 
         if (name) {
             template = <p>Привет, {name}!</p>
         } else {
 
-            template = <button className='btn' onClick={this.props.handleLogin}>Войти</button>
+            template = <button className='btn' onClick={props.handleLogin}>Войти</button>
         }
 
         return (
@@ -19,7 +24,8 @@ export default class User extends Component {
                 {error ? <p className='error'> {error}. <br /> Попробуйте еще раз.</p> : ''}
             </div>
         )
-    }
-}
+};
+
+export default User;
 
 

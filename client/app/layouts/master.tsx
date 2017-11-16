@@ -3,7 +3,7 @@ import Navbar from "controls/Navbar";
 import Jumbotron from "controls/Jumbotron";
 
 
-export default function MasterLayout(props) {
+const MasterLayout = (props) => {
     return (
         <div>
             <Navbar/>
@@ -13,5 +13,7 @@ export default function MasterLayout(props) {
             </div>
         </div>
     );
-}
+};
+
+export default MasterLayout;
 
