@@ -1,11 +1,11 @@
-import React, {Component} from "react";
+import * as React from "react";
 import MasterLayout from "../layouts/master";
 
-export default class AdminPage extends Component<any, any> {
+export default class AdminPage extends React.Component<any, any> {
     componentDidMount() {
         console.log("Вошли в админку")
-
     }
+
     render() {
 
         return (

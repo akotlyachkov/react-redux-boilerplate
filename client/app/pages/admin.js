@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import * as React from "react";
 import MasterLayout from "../layouts/master";
-export default class AdminPage extends Component {
+export default class AdminPage extends React.Component {
     componentDidMount() {
         console.log("Вошли в админку");
     }
@@ -11,4 +11,4 @@ export default class AdminPage extends Component {
     }
 }
 ;
-//# sourceMappingURL=Admin.js.map
+//# sourceMappingURL=admin.js.map

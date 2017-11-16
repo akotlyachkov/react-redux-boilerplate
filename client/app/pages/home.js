@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import * as React from "react";
 import MasterLayout from "../layouts/master";
 const getConfirmation = (message, callback) => {
     const allowTransition = window.confirm(message);
     callback(allowTransition);
 };
-export default class HomePage extends Component {
+export default class HomePage extends React.Component {
     componentDidMount() {
-        this.props.router.setRouteLeaveHook(this.props.route, getConfirmation);
         console.log(1);
     }
     componentWillMount() {
@@ -18,4 +17,4 @@ export default class HomePage extends Component {
     }
 }
 ;
-//# sourceMappingURL=Home.js.map
+//# sourceMappingURL=home.js.map

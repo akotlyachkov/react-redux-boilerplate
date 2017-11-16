@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import * as React from "react";
 import MasterLayout from "../layouts/master";
-export default class DefaultPage extends Component {
+export default class DefaultPage extends React.Component {
     render() {
         return (React.createElement(MasterLayout, null,
             React.createElement("div", { className: "row" },
@@ -8,4 +8,4 @@ export default class DefaultPage extends Component {
                 React.createElement("p", null, "Page not found"))));
     }
 }
-//# sourceMappingURL=Default.js.map
+//# sourceMappingURL=default.js.map

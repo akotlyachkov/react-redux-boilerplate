@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-export default class Photos extends Component {
+import * as React from "react";
+export default class Photos extends React.Component {
     onYearBtnClick(e) {
         this.props.getPhotos(+e.target.innerText);
     }
@@ -25,4 +25,4 @@ export default class Photos extends Component {
                             " \u2764")))));
     }
 }
-//# sourceMappingURL=Photos.js.map
+//# sourceMappingURL=photos.js.map

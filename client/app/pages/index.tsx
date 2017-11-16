@@ -1,8 +1,8 @@
-import AboutPage from './About'
-import DefaultPage from './Default'
-import AdminPage from './Admin'
-import HomePage from './Home'
-import NotFoundPage from './NotFound'
+import AboutPage from './about'
+import DefaultPage from './default'
+import AdminPage from './admin'
+import HomePage from './home'
+import NotFoundPage from './not-found'
 
 export {
     AboutPage,

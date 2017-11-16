@@ -1,38 +1,20 @@
-import React, {Component} from "react";
-import {bindActionCreators} from "redux";
+import * as React from "react";
 import {connect} from "react-redux";
-import Photos from "../controls/Photos";
-import User from "../controls/User";
-import * as pageActions from "../actions/page";
-import * as userActions from "../actions/user";
+import {User, Photos} from "../controls";
 
-class App extends Component {
+
+class App extends React.Component<any,any> {
     render() {
         const {user, page} = this.props;
-        const {getPhotos} = this.props.pageActions;
-        const {handleLogin} = this.props.userActions;
-
         return (
             <div className='row'>
-                <Photos photos={page.photos} year={page.year} getPhotos={getPhotos} fetching={page.fetching} error={page.error}/>
-                <User name={user.name} handleLogin={handleLogin} error={user.error}/>
+                <Photos photos={page.photos} year={page.year}  fetching={page.fetching} error={page.error}/>
+                <User name={user.name}  error={user.error}/>
             </div>
         )
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        user: state.user,
-        page: state.page
-    }
-}
 
-function mapDispatchToProps(dispatch) {
-    return {
-        pageActions: bindActionCreators(pageActions, dispatch),
-        userActions: bindActionCreators(userActions, dispatch)
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect()(App)

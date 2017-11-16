@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "module": "es6",
+        "module": "commonjs",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -14,6 +14,6 @@
         ]
     },
     "include": [
-        "client/app/root.tsx"
+        "client/app/index.tsx"
     ]
 }

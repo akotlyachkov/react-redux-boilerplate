@@ -1,13 +1,9 @@
-import React from "react";
-import Route from "react-router-dom";
-class RestrictRoute extends Route {
-    constructor(props) {
-        super(props);
-        this.props = props;
-    }
+import * as React from "react";
+import * as ReactRouterDOM from "react-router-dom";
+class RestrictRoute extends ReactRouterDOM.Route {
     componentWillMount() {
         const login = window.localStorage.getItem('user');
-        this.props.history;
+        console.log(this.props.history);
         if (login == 'admin')
             console.log('вошли админом');
         else {
@@ -16,8 +12,8 @@ class RestrictRoute extends Route {
         }
     }
     render() {
-        return React.createElement(Route, Object.assign({ ref: "routa" }, this.props));
+        return React.createElement(ReactRouterDOM.Route, Object.assign({ ref: "routa" }, this.props));
     }
 }
 export default RestrictRoute;
-//# sourceMappingURL=RestrictRoute.js.map
+//# sourceMappingURL=restrict-route.js.map

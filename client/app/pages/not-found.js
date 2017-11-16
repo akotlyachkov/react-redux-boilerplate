@@ -9,4 +9,4 @@ export default class NotFoundPage extends Component {
     }
 }
 ;
-//# sourceMappingURL=NotFound.js.map
+//# sourceMappingURL=not-found.js.map
