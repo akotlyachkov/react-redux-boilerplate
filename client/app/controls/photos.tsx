@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as  React from "react";
 
-export default class Photos extends React.Component<any,any> {
+export default class Photos extends React.Component<any, any> {
 
     onYearBtnClick(e) {
         this.props.getPhotos(+e.target.innerText)
@@ -12,10 +12,10 @@ export default class Photos extends React.Component<any,any> {
         return (
             <div className='ib page'>
                 <p>
-                    { years.map((item, index) =>  <button className='btn' key={index} onClick={this.onYearBtnClick}>{item}</button>)}
+                    {years.map((item, index) => <button className='btn' key={index} onClick={this.onYearBtnClick}>{item}</button>)}
                 </p>
                 <h3>{year} год [{photos.length}]</h3>
-                { error ? <p className='error'> Во время загрузки фото произошла ошибка</p> : '' }
+                {error ? <p className='error'> Во время загрузки фото произошла ошибка</p> : ''}
                 {
                     fetching ?
                         <p>Загрузка...</p>

@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactRouterDOM from "react-router-dom";
 
-class RestrictRoute extends ReactRouterDOM.Route {
+class RestrictRoute extends ReactRouterDOM.Route<any> {
 
     componentWillMount() {
         const login = window.localStorage.getItem('user');

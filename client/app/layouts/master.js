@@ -1,6 +1,5 @@
-import React from "react";
-import Navbar from "controls/Navbar";
-import Jumbotron from "controls/Jumbotron";
+import * as React from "react";
+import { Jumbotron, Navbar } from "../controls";
 const MasterLayout = (props) => {
     return (React.createElement("div", null,
         React.createElement(Navbar, null),

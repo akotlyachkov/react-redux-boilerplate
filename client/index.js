@@ -1,17 +1,14 @@
 const express = require('express'),
     app = express(),
     path = require('path'),
-    React = require('react'),
-    ReactDOMServer = require('react-dom/server'),
-    Index = require('./app/index.js');
+    React = require('react');
 
 app.use('/', express.static(path.join(__dirname, 'build')));
 app.use('/', express.static(path.join(__dirname, 'favicon')));
 app.use('/', express.static(path.join(__dirname, 'images')));
 app.use('/', express.static(path.join(__dirname, 'fonts')));
 app.use('/', function (req, res, next) {
-    const html = ReactDOMServer.renderToString(Index);
-    res.send('<!DOCTYPE html>\r\n' + html);
+    res.sendFile('index.html', {root: __dirname});
 });
 
 app.use(function (req, res, next) {

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import * as React from "react";
 import MasterLayout from "../layouts/master";
-export default class NotFoundPage extends Component {
+export default class NotFoundPage extends React.Component {
     render() {
         return (React.createElement(MasterLayout, null,
             React.createElement("div", { className: "row" },
