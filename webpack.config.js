@@ -3,7 +3,7 @@ const webpack = require('webpack'),
 
 module.exports = {
     entry: {
-        app: './client/app/root.js',
+        app: './client/app/root.tsx',
     },
     output: {
         filename: '[name].js',
@@ -11,20 +11,18 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: ["source-map-loader"],
-                enforce: "pre"
-            },
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
         ]
     },
-    externals: {
+    resolve: {
+        extensions: [".ts", ".tsx", ".js"]
+    },
+    /*externals: {
         React: 'react',
         ReactRedux: 'react-redux',
         ReactDOM: 'react-dom',
         ReactRouterDOM: 'react-router-dom',
         Redux: 'redux'
-    },
+    },*/
     devtool: 'source-map'
 };

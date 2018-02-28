@@ -1,8 +1,7 @@
 import * as React from "react";
 import MasterLayout from "../layouts/master";
-import {connect} from "react-redux";
 
-class AboutPage extends React.Component<any, any> {
+export default class AboutPage extends React.Component<any, any> {
 
     private login: HTMLInputElement;
 
@@ -29,5 +28,3 @@ class AboutPage extends React.Component<any, any> {
     }
 }
 
-
-export default connect()(AboutPage)
