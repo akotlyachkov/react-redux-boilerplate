@@ -1,5 +1,6 @@
 import * as React from "react";
 import MasterLayout from "../layouts/master";
+import AlterLayout from "../layouts/alter";
 
 export default class AboutPage extends React.Component<any, any> {
 
@@ -13,7 +14,7 @@ export default class AboutPage extends React.Component<any, any> {
 
     render() {
         return (
-            <MasterLayout>
+            <AlterLayout>
                 <div className="row">
                     <h2>About</h2>
                     <p>
@@ -23,7 +24,7 @@ export default class AboutPage extends React.Component<any, any> {
                     <input placeholder="login" type="text"  ref={login => { this.login = login; }}/>
                     <button onClick={e => this.saveLogin(e)}>Войти</button>
                 </div>
-            </MasterLayout>
+            </AlterLayout>
         );
     }
 }

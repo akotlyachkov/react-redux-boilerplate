@@ -19,7 +19,7 @@
     ],
     "author": "akotlyachkov@gmail.com",
     "dependencies": {
-        "awesome-typescript-loader": "^3.5.0",
+        "ts-loader": "^4.0.0",
         "body-parser": "^1.18.2",
         "compression": "^1.7.2",
         "core-js": "^2.5.3",

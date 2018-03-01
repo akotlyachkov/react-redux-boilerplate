@@ -13,18 +13,18 @@ export default class HomePage extends React.Component<any, any> {
         console.log(1)
     }
 
-    componentWillMount(){
+    componentWillMount() {
         //this.props.history.push('/about');
     }
 
     render() {
 
         return (
-                <MasterLayout>
-                    <div className="row">
-                        <h2>HomeView</h2>
-                    </div>
-                </MasterLayout>
+            <MasterLayout>
+                <div className="row">
+                    <h2>HomeView</h2>
+                </div>
+            </MasterLayout>
         );
     }
 };
