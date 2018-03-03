@@ -6,6 +6,9 @@ import NotFoundPage from "./not-found";
 
 
 export default class DefaultPage extends React.Component<any, any> {
+    constructor(props){
+        super()
+    }
     render() {
         return (
             <MasterLayout>
