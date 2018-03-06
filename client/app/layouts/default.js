@@ -1,14 +1,14 @@
-import * as React from "react";
-import {connect} from "react-redux";
+import  React from "react";
+
 import {User, Photos} from "../controls";
 
 
-class App extends React.Component<any,any> {
+class App extends React.Component {
     render() {
         const {user, page} = this.props;
         return (
             <div className='row'>
-                <Photos photos={page.photos} year={page.year} getPhotos={(n:number)=>console.log(1)}  fetching={page.fetching} error={page.error}/>
+                <Photos photos={page.photos} year={page.year} getPhotos={(n)=>console.log(1)}  fetching={page.fetching} error={page.error}/>
                 <User name={user.name}  error={user.error}/>
             </div>
         )

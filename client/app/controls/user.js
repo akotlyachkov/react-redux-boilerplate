@@ -1,12 +1,7 @@
-import * as React from "react";
+import  React from "react";
 
-export interface IUser{
-    name;
-    error;
-    handleLogin;
-}
 
-const User = (props:IUser) => {
+const User = (props) => {
 
         const {name, error} = props;
         let template;

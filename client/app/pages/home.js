@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import MasterLayout from "../layouts/master";
 
 const getConfirmation = (message, callback) => {
@@ -6,7 +6,7 @@ const getConfirmation = (message, callback) => {
     callback(allowTransition)
 };
 
-export default class HomePage extends React.Component<any, any> {
+export default class HomePage extends React.Component {
 
     componentDidMount() {
         //this.props.router.setRouteLeaveHook(this.props.route, getConfirmation);

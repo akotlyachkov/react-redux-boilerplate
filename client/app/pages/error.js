@@ -1,7 +1,7 @@
-import * as React from "react";
+import React from "react";
 import MasterLayout from "../layouts/master";
 
-export default class ErrorPage extends React.Component<any, any> {
+export default class ErrorPage extends React.Component {
     componentDidMount() {
         console.log("Вошли в ошибку")
     }

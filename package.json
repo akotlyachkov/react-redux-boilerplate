@@ -1,48 +1,44 @@
 {
-    "name": "react-flux-webpack-ts",
-    "version": "1.0.0",
-    "description": "react flux webpack typescript",
-    "main": "start.js",
-    "scripts": {
-        "webpack": "webpack",
-        "watch-webpack": "webpack --watch"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/akotlyachkov/react-redux-webpack-ts.git"
-    },
-    "keywords": [
-        "react",
-        "flux",
-        "typescript",
-        "webpack"
-    ],
-    "author": "akotlyachkov@gmail.com",
-    "dependencies": {
-        "ts-loader": "^4.0.0",
-        "body-parser": "^1.18.2",
-        "compression": "^1.7.2",
-        "core-js": "^2.5.3",
-        "express": "^4.16.2",
-        "flux": "^3.1.3",
-        "helmet": "^3.11.0",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
-        "react-helmet": "^5.2.0",
-        "react-router-dom": "^4.2.2",
-        "webpack-cli": "^2.0.9"
-    },
-    "devDependencies": {
-        "@types/react-helmet": "^5.0.4",
-        "@types/core-js": "^0.9.43",
-        "@types/node": "^8.0.53",
-        "@types/react": "^16.0.23",
-        "@types/flux": "^3.1.7",
-        "@types/react-dom": "^16.0.3",
-        "@types/react-redux": "^5.0.13",
-        "@types/react-router": "^4.0.17",
-        "@types/react-router-dom": "^4.2.1",
-        "typescript": "^2.7.2",
-        "webpack": "^4.0.1"
-    }
+  "name": "react-flux",
+  "version": "1.0.0",
+  "description": "react flux sample",
+  "main": "start.js",
+  "scripts": {
+    "webpack": "webpack",
+    "watch-webpack": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akotlyachkov/react-redux-webpack-ts.git"
+  },
+  "keywords": [
+    "react",
+    "flux",
+    "webpack"
+  ],
+  "author": "akotlyachkov@gmail.com",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "core-js": "^2.5.3",
+    "express": "^4.16.2",
+    "flux": "^3.1.3",
+    "helmet": "^3.11.0",
+    "immutable": "^3.8.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^3.11.0"
+  }
 }

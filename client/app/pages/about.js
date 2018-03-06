@@ -1,10 +1,9 @@
-import * as React from "react";
-import MasterLayout from "../layouts/master";
+import React from "react";
 import AlterLayout from "../layouts/alter";
 
-export default class AboutPage extends React.Component<any, any> {
+export default class AboutPage extends React.Component {
 
-    private login: HTMLInputElement;
+
 
     saveLogin(e) {
         e.preventDefault();

@@ -1,6 +1,6 @@
-import DefaultPage from '../pages/default';
 import {Container} from 'flux/utils';
-import TodoStore from './store';
+import TodoStore from '../flux/store';
+import AppView from '../app';
 
 function getStores() {
     return [
@@ -14,4 +14,6 @@ function getState() {
     };
 }
 
-export default Container.createFunctional(DefaultPage, getStores, getState);
+let  AppContainer = Container.createFunctional(AppView, getStores, getState);
+
+export default AppContainer;

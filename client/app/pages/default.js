@@ -1,11 +1,8 @@
-import * as React from "react";
+import React from "react";
 import MasterLayout from "../layouts/master";
-import HomePage from "./home";
-import {Route, Switch} from "react-router";
-import NotFoundPage from "./not-found";
 
 
-export default class DefaultPage extends React.Component<any, any> {
+export default class DefaultPage extends React.Component {
     constructor(props){
         super()
     }

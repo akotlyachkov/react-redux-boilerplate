@@ -1,4 +1,4 @@
-import actionTypes from './actionTypes';
+import actionTypes from './types';
 import dispatcher from './dispatcher';
 
 const Actions = {

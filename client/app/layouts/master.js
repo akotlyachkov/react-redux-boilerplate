@@ -1,19 +1,18 @@
-import * as React from "react";
+import React from "react";
 import {Jumbotron, Navbar} from "../controls";
 
 
-const AlterLayout = (props) => {
+const MasterLayout = (props) => {
     return (
         <div>
             <Navbar/>
             <Jumbotron/>
             <div className="container">
-                <p>Альтернативный шаблон</p>
                 {...props.children}
             </div>
         </div>
     );
 };
 
-export default AlterLayout;
+export default MasterLayout;
 
