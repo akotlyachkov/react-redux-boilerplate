@@ -3,6 +3,10 @@ import  Route from "react-router-dom";
 
 class RestrictRoute extends Route {
 
+    constructor(props) {
+        super();
+    }
+
     componentWillMount() {
         const login = window.localStorage.getItem('user');
         console.log(this.props.history);

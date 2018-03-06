@@ -5,6 +5,7 @@ import TodoDispatcher from './dispatcher';
 class TodoStore extends ReduceStore {
 
 
+
     constructor() {
         super(TodoDispatcher);
     }

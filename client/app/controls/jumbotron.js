@@ -1,6 +1,6 @@
 import  React from "react";
 
-const Jumbotron = () => {
+export default () => {
     return (
         <div className="text-center">
             <h1>Джумботрон Иванович</h1>
@@ -9,4 +9,3 @@ const Jumbotron = () => {
     )
 };
 
-export default Jumbotron;

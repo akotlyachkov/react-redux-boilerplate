@@ -2,7 +2,7 @@ import {AboutPage, DefaultPage, HomePage, NotFoundPage} from "./pages";
 import React from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
-function AppView(props) {
+export default (props)=> {
     return (
         <BrowserRouter>
             <Switch>
@@ -15,4 +15,3 @@ function AppView(props) {
     )
 }
 
-export default AppView;

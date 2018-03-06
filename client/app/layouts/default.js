@@ -4,6 +4,9 @@ import {User, Photos} from "../controls";
 
 
 class App extends React.Component {
+    constructor(props) {
+        super();
+    }
     render() {
         const {user, page} = this.props;
         return (
@@ -17,4 +20,4 @@ class App extends React.Component {
 
 
 
-export default connect()(App)
+export default App

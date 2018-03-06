@@ -2,6 +2,9 @@ import React from "react";
 import MasterLayout from "../layouts/master";
 
 export default class NotFoundPage extends React.Component {
+    constructor(props) {
+        super();
+    }
 
     render() {
 

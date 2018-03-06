@@ -9,7 +9,7 @@ const AlterLayout = (props) => {
             <Jumbotron/>
             <div className="container">
                 <p>Альтернативный шаблон</p>
-                {...props.children}
+                {props.children}
             </div>
         </div>
     );

@@ -7,6 +7,9 @@ const getConfirmation = (message, callback) => {
 };
 
 export default class HomePage extends React.Component {
+    constructor(props) {
+        super();
+    }
 
     componentDidMount() {
         //this.props.router.setRouteLeaveHook(this.props.route, getConfirmation);
