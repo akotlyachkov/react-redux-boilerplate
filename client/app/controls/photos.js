@@ -1,6 +1,10 @@
-import * as  React from "react";
+import React from "react";
 
-export default class Photos extends React.Component<any, any> {
+export default class Photos extends React.Component {
+
+    constructor(props) {
+        super();
+    }
 
     onYearBtnClick(e) {
         this.props.getPhotos(+e.target.innerText)

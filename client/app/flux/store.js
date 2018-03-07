@@ -1,24 +1,28 @@
-import Immutable from 'immutable';
 import {ReduceStore} from 'flux/utils';
-import TodoActionTypes from './actionTypes';
+import TodoActionTypes from './types';
 import TodoDispatcher from './dispatcher';
 
 class TodoStore extends ReduceStore {
+
     constructor() {
         super(TodoDispatcher);
     }
 
     getInitialState() {
-        return Immutable.OrderedMap();
+        return {
+            name:'вася'
+        };
     }
 
     reduce(state, action) {
         switch (action.type) {
             case TodoActionTypes.ADD_TODO:
-                // Do nothing for now, we will add logic here soon!
-
+                console.log('ADD_TODO');
                 return state;
-
+            case TodoActionTypes.ChangeName:
+                console.log(action);
+                state.name = action.name;
+                return state;
             default:
                 return state;
         }

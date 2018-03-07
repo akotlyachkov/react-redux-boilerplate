@@ -1,12 +1,22 @@
-import * as React from "react";
+import React from "react";
 import MasterLayout from "../layouts/master";
+import TodoStore from '../flux/store';
+import {Container} from "flux/utils";
 
 const getConfirmation = (message, callback) => {
     const allowTransition = window.confirm(message);
     callback(allowTransition)
 };
 
-export default class HomePage extends React.Component<any, any> {
+class HomePage extends React.Component {
+
+    static getStores() {
+        return [TodoStore];
+    }
+
+    static calculateState(prevState) {
+        return  TodoStore.getState();
+    }
 
     componentDidMount() {
         //this.props.router.setRouteLeaveHook(this.props.route, getConfirmation);
@@ -20,13 +30,13 @@ export default class HomePage extends React.Component<any, any> {
     render() {
 
         return (
-            <MasterLayout>
+            <MasterLayout {...this.state}>
                 <div className="row">
                     <h2>HomeView</h2>
                 </div>
             </MasterLayout>
         );
     }
-};
+}
 
-
+export default Container.create(HomePage);

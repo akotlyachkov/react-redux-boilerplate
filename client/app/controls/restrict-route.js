@@ -1,7 +1,11 @@
-import * as React from "react";
-import * as ReactRouterDOM from "react-router-dom";
+import  React from "react";
+import  Route from "react-router-dom";
 
-class RestrictRoute extends ReactRouterDOM.Route<any> {
+class RestrictRoute extends Route {
+
+    constructor(props) {
+        super();
+    }
 
     componentWillMount() {
         const login = window.localStorage.getItem('user');
@@ -15,7 +19,7 @@ class RestrictRoute extends ReactRouterDOM.Route<any> {
     }
 
     render() {
-        return <ReactRouterDOM.Route ref="routa" {...this.props}/>
+        return <Route ref="routa" {...this.props}/>
     }
 }
 

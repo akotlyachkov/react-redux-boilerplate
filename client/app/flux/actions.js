@@ -1,4 +1,4 @@
-import actionTypes from './actionTypes';
+import actionTypes from './types';
 import dispatcher from './dispatcher';
 
 const Actions = {
@@ -8,6 +8,12 @@ const Actions = {
             text,
         });
     },
+    changeName(name){
+        dispatcher.dispatch({
+            type: actionTypes.ChangeName,
+            name,
+        });
+    }
 };
 
 export default Actions;

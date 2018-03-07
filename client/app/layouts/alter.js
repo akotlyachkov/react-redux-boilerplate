@@ -1,15 +1,15 @@
-import * as React from "react";
+import React from "react";
 import {Jumbotron, Navbar} from "../controls";
 
 
 const AlterLayout = (props) => {
     return (
         <div>
-            <Navbar/>
+            <Navbar {...props}/>
             <Jumbotron/>
             <div className="container">
                 <p>Альтернативный шаблон</p>
-                {...props.children}
+                {props.children}
             </div>
         </div>
     );

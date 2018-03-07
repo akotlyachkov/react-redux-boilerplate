@@ -6,10 +6,10 @@ import NotFoundPage from './not-found'
 import ErrorPage from './error'
 
 export {
-    AboutPage,
+   AboutPage,
     DefaultPage,
-    AdminPage,
-    HomePage,
-    NotFoundPage,
-    ErrorPage
+   AdminPage,
+   HomePage,
+   NotFoundPage,
+   ErrorPage
 }
