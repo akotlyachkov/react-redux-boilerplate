@@ -4,14 +4,14 @@ import TodoDispatcher from './dispatcher';
 
 class TodoStore extends ReduceStore {
 
-
-
     constructor() {
         super(TodoDispatcher);
     }
 
     getInitialState() {
-        return {};
+        return {
+            name:'вася'
+        };
     }
 
     reduce(state, action) {
@@ -19,7 +19,10 @@ class TodoStore extends ReduceStore {
             case TodoActionTypes.ADD_TODO:
                 console.log('ADD_TODO');
                 return state;
-
+            case TodoActionTypes.ChangeName:
+                console.log(action);
+                state.name = action.name;
+                return state;
             default:
                 return state;
         }

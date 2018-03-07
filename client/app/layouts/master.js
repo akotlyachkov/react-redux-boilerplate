@@ -1,11 +1,10 @@
 import React from "react";
 import {Jumbotron, Navbar} from "../controls";
 
-
-export default (props) => {
+ const MasterLayout = (props) => {
     return (
         <div>
-            <Navbar/>
+            <Navbar {...props}/>
             <Jumbotron/>
             <div className="container">
                 {props.children}
@@ -14,4 +13,4 @@ export default (props) => {
     );
 };
 
-
+export default MasterLayout;

@@ -1,9 +1,12 @@
 import  React from "react";
 import {Link} from "react-router-dom";
 
-export default () => {
+const  Navbar = (props)=> {
     return (
         <div className="container">
+            <div className="row">
+                {props.name}
+            </div>
             <div className="row">
                 <ul className="nav nav-pills">
                     <li><Link to="/">Index</Link></li>
@@ -17,3 +20,4 @@ export default () => {
     )
 };
 
+export default  Navbar

@@ -1,20 +1,25 @@
 import React from "react";
 import AlterLayout from "../layouts/alter";
+import TodoStore from '../flux/store';
+import {Container} from "flux/utils";
+import Actions from "../flux/actions"
+class AboutPage extends React.Component {
+    static getStores() {
+        return [TodoStore];
+    }
 
-export default class AboutPage extends React.Component {
-    constructor(props) {
-        super()
+    static calculateState(prevState) {
+        return TodoStore.getState();
     }
 
     saveLogin(e) {
         e.preventDefault();
-        console.log(this.login.value);
-        window.localStorage.setItem('user', this.login.value);
+        Actions.changeName(this.login.value)
     }
 
     render() {
         return (
-            <AlterLayout>
+            <AlterLayout {...this.state}>
                 <div className="row">
                     <h2>About</h2>
                     <p>
@@ -31,3 +36,4 @@ export default class AboutPage extends React.Component {
     }
 }
 
+export default Container.create(AboutPage);

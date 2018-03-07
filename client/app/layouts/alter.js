@@ -5,7 +5,7 @@ import {Jumbotron, Navbar} from "../controls";
 const AlterLayout = (props) => {
     return (
         <div>
-            <Navbar/>
+            <Navbar {...props}/>
             <Jumbotron/>
             <div className="container">
                 <p>Альтернативный шаблон</p>

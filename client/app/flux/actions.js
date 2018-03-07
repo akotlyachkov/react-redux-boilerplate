@@ -8,6 +8,12 @@ const Actions = {
             text,
         });
     },
+    changeName(name){
+        dispatcher.dispatch({
+            type: actionTypes.ChangeName,
+            name,
+        });
+    }
 };
 
 export default Actions;

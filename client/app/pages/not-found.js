@@ -1,15 +1,19 @@
 import React from "react";
 import MasterLayout from "../layouts/master";
+import TodoStore from '../flux/store';
+import {Container} from "flux/utils";
 
-export default class NotFoundPage extends React.Component {
-    constructor(props) {
-        super();
+class NotFoundPage extends React.Component {
+    static getStores() {
+        return [TodoStore];
     }
-
+    static calculateState(prevState) {
+        return  TodoStore.getState();
+    }
     render() {
 
         return (
-            <MasterLayout>
+            <MasterLayout  {...this.state}>
                 <div className="row">
                     <h2>404</h2>
                     <p>Ничё не найдено</p>
@@ -17,6 +21,7 @@ export default class NotFoundPage extends React.Component {
             </MasterLayout>
         );
     }
-};
+}
 
 
+export default Container.create(NotFoundPage);

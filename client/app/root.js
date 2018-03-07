@@ -1,5 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppContainer from './containers/app';
+import {AboutPage, DefaultPage, HomePage, NotFoundPage} from "./pages";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
-ReactDOM.render(<AppContainer/>, document.getElementById('root'));
+const Root = () => {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" component={DefaultPage} exact/>
+                <Route path="/home" component={HomePage} />
+                <Route path="/about" component={AboutPage} />
+                <Route component={NotFoundPage}/>
+            </Switch>
+        </BrowserRouter>
+    )
+};
+
+
+ReactDOM.render(<Root/>, document.getElementById('root'));

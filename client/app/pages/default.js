@@ -1,14 +1,20 @@
-import React from "react";
+import React, {Component} from "react";
 import MasterLayout from "../layouts/master";
+import {Container} from "flux/utils";
+import TodoStore from '../flux/store';
 
-
-export default class DefaultPage extends React.Component {
-    constructor(props){
-        super()
+class DefaultPage extends Component {
+    static getStores() {
+        return [TodoStore];
     }
+
+    static calculateState(prevState) {
+        return TodoStore.getState();
+    }
+
     render() {
         return (
-            <MasterLayout>
+            <MasterLayout {...this.state}>
                 <div className="row">
                     <h2>Index</h2>
                     <p>Стартовая страница</p>
@@ -18,3 +24,5 @@ export default class DefaultPage extends React.Component {
         );
     }
 }
+
+export default Container.create(DefaultPage);

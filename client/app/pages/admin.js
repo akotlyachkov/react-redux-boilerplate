@@ -1,10 +1,17 @@
-import  React from "react";
+import React from "react";
 import MasterLayout from "../layouts/master";
+import TodoStore from '../flux/store';
+import {Container} from "flux/utils";
 
-export default class AdminPage extends React.Component {
-    constructor(props) {
-        super();
+class AdminPage extends React.Component {
+    static getStores() {
+        return [TodoStore];
     }
+
+    static calculateState(prevState) {
+        return TodoStore.getState();
+    }
+
     componentDidMount() {
         console.log("Вошли в админку")
     }
@@ -12,13 +19,14 @@ export default class AdminPage extends React.Component {
     render() {
 
         return (
-                <MasterLayout>
-                    <div className="row">
-                        <h2>Admin</h2>
-                    </div>
-                </MasterLayout>
+            <MasterLayout {...this.state}>
+                <div className="row">
+                    <h2>Admin</h2>
+                </div>
+            </MasterLayout>
         );
     }
-};
+}
 
 
+export default Container.create(AdminPage);
