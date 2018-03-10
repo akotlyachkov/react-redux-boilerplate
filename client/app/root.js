@@ -1,20 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {AboutPage, DefaultPage, HomePage, NotFoundPage} from "./pages";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {Provider} from 'react-redux'
+import store from './store';
+import {Router,browserHistory} from 'react-router'
+import DefaultPage from "./containers/default";
+import AboutPage from "./containers/about";
+import Layout from "./containers/layout";
 
-const Root = () => {
-    return (
-        <BrowserRouter>
-            <Switch>
-                <Route path="/" component={DefaultPage} exact/>
-                <Route path="/home" component={HomePage} />
-                <Route path="/about" component={AboutPage} />
-                <Route component={NotFoundPage}/>
-            </Switch>
-        </BrowserRouter>
-    )
+const routes = {
+    path: '/',
+    component: Layout,
+    indexRoute: {component: DefaultPage},
+    childRoutes: [
+        {path: 'about', component: AboutPage}
+    ]
 };
 
-
-ReactDOM.render(<Root/>, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <Router  history={browserHistory} routes={routes}/>
+    </Provider>,
+    document.getElementById('root'));
