@@ -6,8 +6,10 @@ app.use('/config', function (req, res, next) {
     res.send({config: true});
 });
 
-app.use('/test', function (req, res, next) {
-    res.send({test: true});
+app.post('/test', function (req, res, next) {
+    setTimeout(()=>{
+        res.send({test: true, body:req.body});
+    },5000)
 });
 
 app.use(function (req, res, next) {

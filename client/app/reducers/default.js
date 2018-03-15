@@ -1,19 +1,39 @@
 import actionTypes from '../actions/types';
 
+
 const initialState = {
-    name: 'Вася'
+    name: 'Вася',
+    progress:false
 };
 
 function defaultReducer(state = initialState, action) {
     switch (action.type) {
         case actionTypes.ChangeName:
-            return Object.assign({}, state,
-                {
-                    name: action.payload
-                });
+            return {
+                ...state,
+                ...action.payload
+            };
+        case actionTypes.LoadDataStart:
+
+            return {
+                ...state,
+                ...action.payload
+            };
+        case actionTypes.LoadDataSuccess:
+
+            return {
+                ...state,
+                ...action.payload
+            };
+        case actionTypes.LoadDataError:
+
+            return {
+                ...state,
+                ...action.payload
+            };
         default:
             return state
     }
 }
 
-export default  defaultReducer
+export default defaultReducer

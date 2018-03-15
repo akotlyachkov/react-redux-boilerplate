@@ -4,8 +4,8 @@ import {bindActionCreators} from "redux";
 import * as Actions from "../actions/actions";
 
 class AboutPage extends React.Component {
-    handleName(e){
-        this.props.actions.changeName()
+    handleName(event){
+        this.props.actions.ChangeName(event.target.value)
     }
     render() {
         return (
