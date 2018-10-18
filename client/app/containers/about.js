@@ -1,28 +1,36 @@
 import React from "react";
-import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
-import * as Actions from "../actions/actions";
+import {Container} from 'flux/utils';
+import {store} from '../store';
+import {actions} from '../actions/actions';
+class About extends React.Component {
+  static getStores() {
+    return [
+      store
+    ]
+  }
 
-class AboutPage extends React.Component {
-    handleName(event){
-        this.props.actions.ChangeName(event.target.value)
+  static calculateState(prevState) {
+    return {
+      base: store.getState()
     }
-    render() {
-        return (
-            <div>
-                <h2>About</h2>
-                <input type="text" name="name"
-                       value={this.props.name}
-                       onChange={(e)=>this.handleName(e)}/>
-            </div>
-        );
-    }
+  }
+
+  handleName(event) {
+    actions.changeName(event.target.value)
+  }
+
+  render() {
+    let {name}=this.state.base;
+    return (
+      <div>
+        <h2>About</h2>
+        <p>{name}</p>
+        <input type="text" name="name"
+               value={name}
+               onChange={this.handleName}/>
+      </div>
+    );
+  }
 }
-
-const mapStateToProps = state => ({...state.defaultReducer});
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(Actions, dispatch)
-});
-
-export default connect(mapStateToProps,mapDispatchToProps)(AboutPage);
+let AboutPage = Container.create(About);
+export {AboutPage}

@@ -1,6 +1,5 @@
 const express = require('express'),
     helmet = require('helmet'),
-    path = require('path'),
     compression = require('compression'),
     bodyParser = require('body-parser'),
     app = express(),
@@ -20,6 +19,6 @@ app.use('/', clientApp);
 
 app.set('port', process.env.PORT || config.system.port || '3000');
 
-server.listen(app.get('port'), function () {
-    console.log(`Тестовое приложение запущено http://localhost:${app.get('port')}`);
+server.listen(3000, function () {
+    console.log(`Тестовое приложение запущено http://localhost:3000`);
 });

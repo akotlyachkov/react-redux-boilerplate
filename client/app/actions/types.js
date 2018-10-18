@@ -5,4 +5,4 @@ const ActionTypes = {
     LoadDataStart: 'LoadDataStart',
 };
 
-export default ActionTypes;
+export {ActionTypes};
