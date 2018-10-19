@@ -5,6 +5,7 @@ const state = {
   regions: [],
   cities: [],
   banks: [],
+  progress: false,
   error: false,
   done: false,
   ready: false,
@@ -26,6 +27,10 @@ class Store extends ReduceStore {
     switch (type) {
       case ActionTypes.ChangeName:
         return {...state, name:data};
+      case ActionTypes.LoadDataStart:
+      case ActionTypes.LoadDataSuccess:
+      case ActionTypes.LoadDataError:
+        return {...state, ...data};
       default:
         return state;
     }

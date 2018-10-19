@@ -1,38 +1,39 @@
 import React, {Component} from "react";
-import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
-import * as Actions from "../actions/actions";
+import {Container} from 'flux/utils';
+import {store} from '../store';
+import {actions} from '../actions/actions';
 import {Progress} from '../controls/progress'
 
-class DefaultPage extends Component {
-    componentDidMount() {
-        let {dispatch}=this.props;
-        Actions.loadTestData()(dispatch)
+class Default extends Component {
+  static getStores() {
+    return [
+      store
+    ]
+  }
+
+  static calculateState(prevState) {
+    return {
+      base: store.getState()
     }
+  }
 
-    render() {
-        return (
-            <div>
-                <h2>Index</h2>
-                <Progress {...this.props}/>
-                <div>
-                    test: {this.props.test && this.props.test.toString()}
+  componentDidMount() {
+    actions.loadTestData()
+  }
 
-                </div>
-            </div>
-        );
-    }
+  render() {
+    let {progress,test} = this.state.base;
+    return (
+      <div>
+        <h2>Index</h2>
+        <Progress progress={progress}/>
+        <div>
+          test: {test && test.toString()}
+        </div>
+      </div>
+    );
+  }
 }
 
-function mapStateToProps (state) {
-   return {...state.defaultReducer}
-}
-
-function mapDispatchToProps (dispatch, props) {
- return {
-     dispatch,
-     actions: bindActionCreators(Actions, dispatch)
- }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DefaultPage);
+let DefaultPage = Container.create(Default);
+export {DefaultPage}

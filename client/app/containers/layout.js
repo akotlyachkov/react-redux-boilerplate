@@ -1,32 +1,20 @@
-import React, {Component} from "react";
-import {Link} from "react-router";
+import React from "react";
+import {Link} from "react-router-dom";
 import {bindActionCreators} from "redux";
-import * as Actions from "../actions/actions";
 import {connect} from "react-redux";
 
-class Layout extends Component {
+const Layout = props=> {
+    return (
+      <div>
+        <h1>Master</h1>
+        <div>
+          <Link to="/">Главная</Link>
+          <Link to="/about">About</Link>
+        </div>
+        <hr/>
+        {this.props.children}
+      </div>
+    );
+};
 
-    render() {
-        return (
-            <div>
-                <h1>Master</h1>
-                <ul>
-                    <li><Link to="/">Главная</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                </ul>
-                <hr/>
-                {this.props.name}
-                <hr/>
-                {this.props.children}
-            </div>
-        );
-    }
-}
-
-const mapStateToProps = state => ({...state.defaultReducer});
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(Actions, dispatch)
-});
-
-export default connect(mapStateToProps,mapDispatchToProps)(Layout);
+export {Layout}
