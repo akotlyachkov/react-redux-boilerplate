@@ -1,13 +1,12 @@
-const webpack = require('webpack'),
-  path = require('path');
+const path = require('path');
 
 module.exports = {
   entry: {
-    app: './client/app/root.js',
+    script: './app/root.js',
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, './client/build')
+    path: path.resolve(__dirname, 'build')
   },
   module: {
     rules: [
@@ -21,12 +20,12 @@ module.exports = {
             plugins: ['@babel/plugin-transform-async-to-generator']
           }
         }
-      },
+      }
     ]
   },
   resolve: {
     extensions: ['.js']
   },
-  mode:'development',
+  mode: 'development',
   devtool: 'source-map'
 };

@@ -1,7 +1,7 @@
 {
-  "name": "react-redux",
-  "version": "1.0.0",
-  "description": "react redux sample",
+  "name": "react-boilerplate",
+  "version": "1.1.0",
+  "description": "react flux sample",
   "main": "start.js",
   "scripts": {
     "start": "webpack --watch",
@@ -9,15 +9,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akotlyachkov/react-redux-webpack-ts.git"
+    "url": "git+https://github.com/makeconstnotvar/react-boilerplate.git"
   },
   "keywords": [
     "react",
-    "redux",
+    "flux",
     "webpack"
   ],
-  "author": "akotlyachkov@gmail.com",
+  "author": "makeconstnotvar@protonmail.com",
   "dependencies": {
+    "css-loader": "^1.0.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.3.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "lodash": "^4.17.10",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "express": "^4.16.4",
