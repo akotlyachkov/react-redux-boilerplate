@@ -6,7 +6,7 @@ import {AboutPage} from "./pages/about";
 import {DefaultPage} from "./pages/default";
 import {Layout} from "./controls/layout";
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <BrowserRouter>
     <Layout>
       <Switch>
