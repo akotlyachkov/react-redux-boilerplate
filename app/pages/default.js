@@ -22,13 +22,13 @@ class Default extends Component {
   }
 
   render() {
-    let {progress,test} = this.state.base;
+    let {progress,status=''} = this.state.base;
     return (
       <div>
-        <h2>Index</h2>
-        <Progress progress={progress}/>
+        <h2>Index <Progress progress={progress}/></h2>
+
         <div>
-          test: {test && test.toString()}
+          test: {status}
         </div>
       </div>
     );
