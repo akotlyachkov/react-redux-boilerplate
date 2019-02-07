@@ -6,7 +6,9 @@ const actions = {
   changeName(name) {
     dispatch2(ActionTypes.ChangeName, name)
   },
-
+  deleteItem(itemId) {
+    dispatch2(ActionTypes.DeleteItem, itemId)
+  },
   async loadTestData() {
     dispatch2(ActionTypes.LoadDataStart, {progress: true});
     await axios.post('/api/test', {data: 1})

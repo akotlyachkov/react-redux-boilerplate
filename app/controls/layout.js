@@ -7,6 +7,7 @@ const Layout = props => {
         <h1>Основной шаблон</h1>
         <nav>
           <Link className="dashed rgap6" to="/">Главная</Link>
+          <Link className="dashed rgap6" to="/list">List</Link>
           <Link className="dashed" to="/about">About</Link>
         </nav>
         <hr/>

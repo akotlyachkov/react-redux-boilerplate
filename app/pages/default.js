@@ -27,7 +27,6 @@ class Default extends Component {
     return (
       <div>
         <h2>Index <Progress progress={progress}/></h2>
-
         <div>
           test: {status}
         </div>

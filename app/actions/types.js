@@ -1,8 +1,9 @@
 const ActionTypes = {
-    ChangeName: 'ChangeName',
-    LoadDataError: 'LoadDataError',
-    LoadDataSuccess: 'LoadDataSuccess',
-    LoadDataStart: 'LoadDataStart',
+  ChangeName: 'ChangeName',
+  DeleteItem: 'DeleteItem',
+  LoadDataError: 'LoadDataError',
+  LoadDataSuccess: 'LoadDataSuccess',
+  LoadDataStart: 'LoadDataStart',
 };
 
 export {ActionTypes};
