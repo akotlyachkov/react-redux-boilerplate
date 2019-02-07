@@ -1,15 +1,14 @@
 import React from 'react'
-import ReactDOMServer from 'react-dom/server';
+import {renderToString} from 'react-dom/server';
 import {AboutPage} from "./pages/about";
 import {DefaultPage} from "./pages/default";
 import {Layout} from "./controls/layout";
 import {StaticRouter, Route, Switch} from "react-router-dom";
 
-function render(initialState) {
+function render(url, initialState) {
 
-  const context = {};
-  let html = ReactDOMServer.renderToString(
-    <StaticRouter location={req.url} context={context}>
+  let html = renderToString(
+    <StaticRouter location={url}>
       <Layout>
         <Switch>
           <Route path='/' exact component={DefaultPage}/>
@@ -18,9 +17,33 @@ function render(initialState) {
       </Layout>
     </StaticRouter>
   );
+  return html;
 
 }
 
+function getHtml(url) {
 
 
-module.exports =
+  let html = `
+  <!DOCTYPE html>
+  <html lang="ru">
+  <head>
+      <base href="/">
+      <title>React Flux boilerplate</title>
+      <meta charset="UTF-8">
+      <link rel="icon" href="/favicon/apple-icon.png">
+      <link rel="stylesheet" href="/styles/bootstrap-typo.css">
+      <link rel="stylesheet" href="/styles/common.css">
+  </head>
+  <body>
+  <div id="root">${render(req.url)}</div>
+  <script src="app.js"></script>
+  </body>
+  </html>
+  `;
+
+  return html;
+}
+
+
+export default getHtml;

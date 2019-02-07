@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    script: './app/client.js',
     server: './app/server.js',
   },
   output: {
@@ -27,6 +26,7 @@ module.exports = {
   resolve: {
     extensions: ['.js']
   },
+  target: 'node',
   mode: 'development',
-  devtool: 'source-map'
+  devtool: false
 };

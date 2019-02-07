@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const Layout = props=> {
+const Layout = props => {
     return (
       <div className="container">
         <h1>Основной шаблон</h1>

@@ -3,6 +3,7 @@ import {Container} from 'flux/utils';
 import {store} from '../stores/store';
 import {actions} from '../actions/actions';
 import {Progress} from '../controls/progress'
+import {Clock} from "../controls/clock";
 
 class Default extends Component {
   static getStores() {
@@ -30,6 +31,7 @@ class Default extends Component {
         <div>
           test: {status}
         </div>
+        <Clock />
       </div>
     );
   }
