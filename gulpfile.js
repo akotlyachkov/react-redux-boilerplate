@@ -14,6 +14,11 @@ function tildaResolver(url, prev, done) {
 
 let destination = 'build';
 
+gulp.task('fonts', function () {
+  return gulp.src(['node_modules/@fortawesome/fontawesome-free/webfonts/*.woff'])
+    .pipe(gulp.dest('fonts'))
+});
+
 gulp.task('css', function () {
   return gulp.src(['styles/styles.scss'])
     .pipe(sourcemaps.init())

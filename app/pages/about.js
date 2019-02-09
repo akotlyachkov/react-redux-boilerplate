@@ -2,6 +2,8 @@ import React from "react";
 import {Container} from 'flux/utils';
 import {store} from '../stores/store';
 import {actions} from '../actions/actions';
+import {Testik} from "../controls/tetik";
+
 class About extends React.Component {
   static getStores() {
     return [
@@ -20,17 +22,19 @@ class About extends React.Component {
   }
 
   render() {
-    let {name}=this.state.base;
+    let {name} = this.state.base;
     return (
       <div>
         <h2>About</h2>
-        <p>{name}</p>
-        <input type="text" name="name"
-               value={name}
-               onChange={this.handleName}/>
+        <div>
+          <label htmlFor="введите текст:"></label>
+          <input className="form-control mb-10" type="text" name="name" value={name} onChange={this.handleName}/>
+          <div>Введенный текст: "<Testik text={name}/>"</div>
+        </div>
       </div>
     );
   }
 }
+
 let AboutPage = Container.create(About);
 export {AboutPage}

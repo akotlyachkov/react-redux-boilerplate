@@ -2,12 +2,7 @@
   box-sizing: border-box;
 }*/
 
-.container {
-  padding: 0 10px;
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
-}
+
 
 .row {
   display: flex;
@@ -73,7 +68,12 @@
 .last {
   order: 1;
 }
-
+.container {
+  padding: 0 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
 @media only screen and (min-width: 512px) {
 
 }

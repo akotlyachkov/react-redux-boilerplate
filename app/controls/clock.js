@@ -12,13 +12,12 @@ class Clock extends Component {
   }
 
   componentWillUnmount() {
-    delete this.timerID;
+    clearInterval(this.timerID);
   }
 
   tick() {
-    this.setState({
-      date: new Date()
-    });
+    let date = new Date();
+    this.setState({date});
   }
 
   render() {
