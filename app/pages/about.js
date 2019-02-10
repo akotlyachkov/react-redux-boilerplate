@@ -2,7 +2,7 @@ import React from "react";
 import {Container} from 'flux/utils';
 import {store} from '../stores/store';
 import {actions} from '../actions/actions';
-import {Testik} from "../controls/tetik";
+import {Testik} from "../controls/testik";
 
 class About extends React.Component {
   static getStores() {
@@ -27,7 +27,7 @@ class About extends React.Component {
       <div>
         <h2>About</h2>
         <div>
-          <label htmlFor="введите текст:"></label>
+          <label htmlFor="введите текст:"/>
           <input className="form-control mb-10" type="text" name="name" value={name} onChange={this.handleName}/>
           <div>Введенный текст: "<Testik text={name}/>"</div>
         </div>

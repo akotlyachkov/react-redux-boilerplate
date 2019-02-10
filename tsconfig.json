@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+
+    "outFile": "./build/client.js",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "amd",
+    "target": "es6",
+    "jsx": "react",
+    "allowJs": true
+  },
+
+  "include": [
+    "./app/client.js"
+  ]
+}
