@@ -21,6 +21,7 @@ class Store extends ReduceStore {
   }
 
   getInitialState() {
+    console.log('getInitialState');
     return state;
   }
 
@@ -28,14 +29,22 @@ class Store extends ReduceStore {
     let {data, type} = action;
     switch (type) {
       case ActionTypes.DeleteItem:
-        //state.items.splice(data,1);
-        return {...state, items: state.items.filter(item => item.id != data)};
+        return {
+          ...state,
+          items: state.items.filter(item => item.id != data)
+        };
       case ActionTypes.ChangeName:
-        return {...state, name: data};
+        return {
+          ...state,
+          name: data
+        };
       case ActionTypes.LoadDataStart:
       case ActionTypes.LoadDataSuccess:
       case ActionTypes.LoadDataError:
-        return {...state, ...data};
+        return {
+          ...state,
+          ...data
+        };
       default:
         return state;
     }

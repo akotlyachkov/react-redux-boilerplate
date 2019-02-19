@@ -4,15 +4,17 @@ import {AboutPage} from "./pages/about";
 import {DefaultPage} from "./pages/default";
 import {Layout} from "./controls/layout";
 import {StaticRouter, Route, Switch} from "react-router-dom";
+import {ListPage} from "./pages/list";
 
-function render(url, initialState) {
+function renderHtml(url, context={}) {
 
   let html = renderToString(
-    <StaticRouter location={url}>
+    <StaticRouter location={url} context={context}>
       <Layout>
         <Switch>
           <Route path='/' exact component={DefaultPage}/>
           <Route path='/about' component={AboutPage}/>
+          <Route path='/list' component={ListPage}/>
         </Switch>
       </Layout>
     </StaticRouter>
@@ -21,29 +23,24 @@ function render(url, initialState) {
 
 }
 
-function getHtml(url) {
-
-
+function render(url) {
   let html = `
-  <!DOCTYPE html>
-  <html lang="ru">
-  <head>
+    <!DOCTYPE html>
+    <html>
+    <head>
       <base href="/">
       <title>React Flux boilerplate</title>
       <meta charset="UTF-8">
-      <link rel="icon" href="/favicon/apple-icon.png">
-      <link rel="stylesheet" href="/styles/bootstrap-typo.css">
-      <link rel="stylesheet" href="/styles/common.css">
-  </head>
-  <body>
-  <div id="root">${render(req.url)}</div>
-  <script src="app.js"></script>
-  </body>
-  </html>
+      <link rel="stylesheet" href="/build/styles.css">
+    </head>
+    <body>
+      <div id="root">${renderHtml(url)}</div>
+      <script src="/build/script.js"></script>
+    </body>
+    </html>
   `;
-
   return html;
 }
 
 
-export default getHtml;
+export {render};

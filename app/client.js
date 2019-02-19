@@ -7,7 +7,7 @@ import {DefaultPage} from "./pages/default";
 import {ListPage} from "./pages/list";
 import {Layout} from "./controls/layout";
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <BrowserRouter>
     <Layout>
       <Switch>

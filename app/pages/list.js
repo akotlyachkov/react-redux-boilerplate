@@ -41,7 +41,6 @@ class List extends Component {
           <input className="form-control mr-15" type="text" onInput={this.changeInput}/>
             <button className="btn btn-info" onClick={this.deleteItem}>Удалить</button>
         </div>
-
         <ul>
           {items.map(item => <li key={item.id}>{item.id} : {item.name}</li>)}
         </ul>

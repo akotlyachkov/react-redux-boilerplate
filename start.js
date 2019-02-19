@@ -7,7 +7,8 @@ const express = require('express'),
   server = http.createServer(app),
   config = require('./config'),
   minifyHTML = require('express-minify-html'),
-  getHtml = require('./build/server');
+  appServer = require('./build/server');
+
 
 app.use(helmet());
 
@@ -30,15 +31,12 @@ app.use('/api/test', (req, res, next) => {
   }, 2000)
 });
 
-/*app.use('/', (req, res, next) => {
-  let test = getHtml;
-
-  res.send(getHtml(req.url))
-});*/
 app.use('/', (req, res, next) => {
-
-  res.sendFile('index.html',{root:__dirname})
+  let html = appServer.render(req.url);
+  res.send(html)
+  //res.sendFile('index.html',{root:__dirname})
 });
+
 app.set('port', process.env.PORT || config.port || '3000');
 
 server.listen(app.get('port'), function () {

@@ -5,4 +5,4 @@ function dispatch2(type,data){
   dispatch({type,data})
 }
 
-export {dispatcher, dispatch,dispatch2};
+export {dispatcher, dispatch, dispatch2};

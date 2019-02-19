@@ -6,7 +6,7 @@
   "scripts": {
     "watch-js": "webpack --watch",
     "watch-css": "gulp watch",
-    "build": "webpack",
+    "build-js": "webpack --config webpack.config.js",
     "server": "webpack --config webpack.config.server.js"
   },
   "repository": {
@@ -54,7 +54,9 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "sass-loader": "^7.0.3",
+    "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
+    "typescript": "^3.3.3",
     "webpack": "^4.29.2",
     "webpack-cli": "^3.2.3"
   }
