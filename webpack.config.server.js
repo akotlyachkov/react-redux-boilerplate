@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    server: './app/server.js',
+    server: './app/server.tsx',
   },
   output: {
     filename: '[name].js',

@@ -1,8 +1,12 @@
-import React, {Component} from "react";
+import * as React from "react";
 
-class Clock extends Component {
+class Clock extends React.Component<any, any> {
 
-  state = {date: new Date()};
+  state = {
+    date: new Date()
+  };
+
+  timerID: number = null;
 
   componentDidMount() {
     this.timerID = setInterval(

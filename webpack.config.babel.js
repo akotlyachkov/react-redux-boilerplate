@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    script: './compiled/client.tsx',
+    script: './app/client.tsx',
   },
   output: {
     filename: '[name].js',
@@ -10,7 +10,7 @@ module.exports = {
   },
   module: {
     rules: [
-     /* {
+      {
         test: /\.js?$/,
         exclude: /node_modules/,
         use: {
@@ -26,14 +26,9 @@ module.exports = {
             ]
           }
         }
-      }*/
-      //{ test: /\.js?$/, loader: "awesome-typescript-loader" },
-      //{ test: /\.js$/,  loader: "source-map-loader", enforce: "pre" }
+      }
     ]
   },
-  /*resolve: {
-    extensions: ['.js']
-  },*/
   mode: 'development',
   devtool: 'source-map'
 };

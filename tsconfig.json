@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./compiled",
-    "sourceMap": false,
-    "noImplicitAny": true,
-    "module": "es6",
+    "outDir": "./build",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
     "target": "es6",
     "jsx": "react",
     "allowJs": true
   },
   "include": [
-    "./app/client.js"
+    "./app/client.tsx"
   ]
+
 }

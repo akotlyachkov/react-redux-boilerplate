@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import {renderToString} from 'react-dom/server';
 import {AboutPage} from "./pages/about";
 import {DefaultPage} from "./pages/default";
